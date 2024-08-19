@@ -1,0 +1,15 @@
+[package]
+name = "Encode"
+version = "1.0.0"
+authors = []
+
+[addresses]
+encode = "0x127e36eae5ebf70fd1038cf5b11c0d0b74f72c65f009796474cb8962c48da474"
+[dev-addresses]
+
+[dependencies.AptosFramework]
+git = "https://github.com/aptos-labs/aptos-core.git"
+rev = "mainnet"
+subdir = "aptos-move/framework/aptos-framework"
+
+[dev-dependencies]
