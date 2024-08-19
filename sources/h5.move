@@ -1,24 +1,20 @@
-module encode::homework{
+module my_addr::h5 {
 
-    use std::signer;
-    // use std::string;
-    // use std::u64;
-    use std::error;
-    const ENOT_VALUE  : u64 = 17;
-
-    struct Asset has drop{
-        value: u64,
-        flag: u8
+    struct Asset has drop {
+        value : u64,
+        flag : u8
     }
 
-    public entry fun create(value : u64, flag : u8): Asset{
-        
+    public entry fun build_asset(value : u64, flag : u8) {
+        assert!(flag < 2 ,13);
+        assert!(value > 100,14);
+
+        let _a = create(value,flag);
+
     }
 
-    fun build_asset(){
-        assert!(value: u64 > 100 && flag: u8 =< 1, error::not_found(ENOT_VALUE))
-
-        let asset = borrow_global<Asset>(account:&signer, value:u64, flag:u8);
+    fun create(value : u64, flag : u8) : Asset {
+        Asset{value : value, flag : flag}
     }
 
 }
